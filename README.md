@@ -2,7 +2,6 @@
 
 Get the Version Name and Version Code on iOS and Android.
 
-## Getting Started
 
 # Android
 
