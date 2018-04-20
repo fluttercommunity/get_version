@@ -2,6 +2,17 @@
 
 Get the Version Name and Version Code on iOS and Android.
 
+## Installing
+
+```
+get_version:
+    git:
+      url: git://github.com/AppleEducate/get_version
+```
+# Use
+```
+import 'package:get_version/get_version.dart';
+```
 
 # Android
 
