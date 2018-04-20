@@ -8,12 +8,14 @@ Get the Version Name and Version Code on iOS and Android.
 
 Go to build.gradle and update:
 
+```
  defaultConfig {
         versionCode 1
         versionName "1.0"
         minSdkVersion 16
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+```
 
 # iOS
 
@@ -23,7 +25,7 @@ Already good to go.
 
 Get OS Version:
 
-"""
+```
 String platformVersion;
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
@@ -31,10 +33,11 @@ String platformVersion;
     } on PlatformException {
       platformVersion = 'Failed to get platform version.';
     }
-"""
+```
 
 Get Version Name:
 
+```
 String projectVersion;
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
@@ -42,9 +45,11 @@ String projectVersion;
     } on PlatformException {
       projectVersion = 'Failed to get platform version.';
     }
+```
 
 Get Version Code:
 
+```
  String projectCode;
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
@@ -52,10 +57,11 @@ Get Version Code:
     } on PlatformException {
       projectCode = 'Failed to get platform version.';
     }
-
+```
     
 ## Example
 
+```
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get_version/get_version.dart';
@@ -159,5 +165,4 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
-
-
+```
