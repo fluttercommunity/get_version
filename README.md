@@ -15,7 +15,7 @@ import 'package:get_version/get_version.dart';
 ```
 
 ## Setup
-# Android
+### Android
 
 Go to build.gradle and update:
 
@@ -28,7 +28,7 @@ Go to build.gradle and update:
     }
 ```
 
-# iOS
+### iOS
 
 Already good to go.
 
