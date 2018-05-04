@@ -9,7 +9,7 @@ get_version:
     git:
       url: git://github.com/AppleEducate/get_version
 ```
-
+## Import
 ```
 import 'package:get_version/get_version.dart';
 ```
