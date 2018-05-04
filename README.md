@@ -9,11 +9,12 @@ get_version:
     git:
       url: git://github.com/AppleEducate/get_version
 ```
-## Use
+
 ```
 import 'package:get_version/get_version.dart';
 ```
 
+## Setup
 # Android
 
 Go to build.gradle and update:
