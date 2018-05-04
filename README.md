@@ -37,7 +37,7 @@ Already good to go.
 Get OS Version:
 
 ```
-String platformVersion;
+    String platformVersion;
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
       platformVersion = await GetVersion.platformVersion;
@@ -49,24 +49,36 @@ String platformVersion;
 Get Version Name:
 
 ```
-String projectVersion;
+  String projectVersion;
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
       projectVersion = await GetVersion.projectVersion;
     } on PlatformException {
-      projectVersion = 'Failed to get platform version.';
+      projectVersion = 'Failed to get project version.';
     }
 ```
 
 Get Version Code:
 
 ```
- String projectCode;
+   String projectCode;
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
       projectCode = await GetVersion.projectCode;
     } on PlatformException {
-      projectCode = 'Failed to get platform version.';
+      projectCode = 'Failed to get build number.';
+    }
+```
+
+Get App ID:
+
+```
+String projectAppID;
+    // Platform messages may fail, so we use a try/catch PlatformException.
+    try {
+      projectAppID = await GetVersion.appID;
+    } on PlatformException {
+      projectAppID = 'Failed to get app ID.';
     }
 ```
     
