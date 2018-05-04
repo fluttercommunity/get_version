@@ -20,4 +20,9 @@ class GetVersion {
     final String versionCode = await _channel.invokeMethod('getProjectCode');
     return versionCode;
   }
+
+  static Future<String> get appID async {
+    final String details = await _channel.invokeMethod('getAppID');
+    return details;
+  }
 }

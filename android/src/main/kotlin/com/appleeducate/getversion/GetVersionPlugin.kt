@@ -23,6 +23,8 @@ class GetVersionPlugin(): MethodCallHandler {
       result.success("${BuildConfig.VERSION_NAME}")
     } else if (call.method.equals("getProjectCode")) {
       result.success("${BuildConfig.VERSION_CODE}")
+    } else if (call.method.equals("getAppID")) {
+      result.success("${BuildConfig.APPLICATION_ID}")
     } else {
       result.notImplemented()
     }

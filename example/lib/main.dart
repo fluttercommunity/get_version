@@ -11,8 +11,9 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   String _platformVersion = 'Unknown';
-  String _projectVersion = 'Unknown';
-  String _projectCode = 'Unknown';
+  String _projectVersion = '';
+  String _projectCode = '';
+  String _projectAppID = '';
 
   @override
   initState() {
@@ -35,7 +36,7 @@ class _MyAppState extends State<MyApp> {
     try {
       projectVersion = await GetVersion.projectVersion;
     } on PlatformException {
-      projectVersion = 'Failed to get platform version.';
+      projectVersion = 'Failed to get project version.';
     }
 
     String projectCode;
@@ -43,7 +44,15 @@ class _MyAppState extends State<MyApp> {
     try {
       projectCode = await GetVersion.projectCode;
     } on PlatformException {
-      projectCode = 'Failed to get platform version.';
+      projectCode = 'Failed to get build number.';
+    }
+
+    String projectAppID;
+    // Platform messages may fail, so we use a try/catch PlatformException.
+    try {
+      projectAppID = await GetVersion.appID;
+    } on PlatformException {
+      projectAppID = 'Failed to get app ID.';
     }
 
     // If the widget was removed from the tree while the asynchronous platform
@@ -55,6 +64,7 @@ class _MyAppState extends State<MyApp> {
       _platformVersion = platformVersion;
       _projectVersion = projectVersion;
       _projectCode = projectCode;
+      _projectAppID = projectAppID;
     });
   }
 
@@ -93,6 +103,14 @@ class _MyAppState extends State<MyApp> {
                 leading: new Icon(Icons.info),
                 title: const Text('Version Code'),
                 subtitle: new Text(_projectCode),
+              ),
+              new Divider(
+                height: 20.0,
+              ),
+              new ListTile(
+                leading: new Icon(Icons.info),
+                title: const Text('App ID'),
+                subtitle: new Text(_projectAppID),
               ),
             ],
           ),
