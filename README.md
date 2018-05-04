@@ -2,7 +2,7 @@
 ![alt text](https://github.com/AppleEducate/get_version/blob/master/screenshots/IMG_0023.PNG)
 
 ## Description
-Get the Version Name and Version Code on iOS and Android.
+Get the Version Name, Version Code and App ID on iOS and Android.
 
 ## Installing
 
