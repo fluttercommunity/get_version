@@ -1,8 +1,11 @@
 name: get_version
-description: Get the Version Name and Version Code on iOS and Android.
+description: Get the Version Name, Version Code, Platform and OS Version, and App ID on iOS and Android.
 version: 0.0.1
-author:
-homepage:
+author: Rody Davis <rody.davis.jr@gmail.com>
+homepage: https://github.com/AppleEducate/get_version
+environment:
+  sdk: ">=1.19.0 <2.0.0"
+  flutter: "^0.3.1"
 
 dependencies:
   flutter:
