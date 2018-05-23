@@ -19,12 +19,6 @@ class GetVersionPlugin(): MethodCallHandler {
   override fun onMethodCall(call: MethodCall, result: Result): Unit {
     if (call.method.equals("getPlatformVersion")) {
       result.success("Android ${android.os.Build.VERSION.RELEASE}")
-    } else if (call.method.equals("getProjectVersion")) {
-      result.success("${BuildConfig.VERSION_NAME}")
-    } else if (call.method.equals("getProjectCode")) {
-      result.success("${BuildConfig.VERSION_CODE}")
-    } else if (call.method.equals("getAppID")) {
-      result.success("${BuildConfig.APPLICATION_ID}")
     } else {
       result.notImplemented()
     }

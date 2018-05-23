@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/services.dart';
+import 'package:package_info/package_info.dart';
 
 class GetVersion {
   static const MethodChannel _channel =
@@ -12,17 +13,26 @@ class GetVersion {
   }
 
   static Future<String> get projectVersion async {
-    final String versionName = await _channel.invokeMethod('getProjectVersion');
-    return versionName;
+    PackageInfo packageInfo = await PackageInfo.fromPlatform();
+    String version = packageInfo.version;
+    return version;
   }
 
   static Future<String> get projectCode async {
-    final String versionCode = await _channel.invokeMethod('getProjectCode');
-    return versionCode;
+    PackageInfo packageInfo = await PackageInfo.fromPlatform();
+    String buildNumber = packageInfo.buildNumber;
+    return buildNumber;
   }
 
   static Future<String> get appID async {
-    final String details = await _channel.invokeMethod('getAppID');
-    return details;
+    PackageInfo packageInfo = await PackageInfo.fromPlatform();
+    String packageName = packageInfo.packageName;
+    return packageName;
+  }
+
+  static Future<String> get appName async {
+    PackageInfo packageInfo = await PackageInfo.fromPlatform();
+     String appName = packageInfo.appName;
+    return appName;
   }
 }
