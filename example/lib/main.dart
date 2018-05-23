@@ -14,6 +14,7 @@ class _MyAppState extends State<MyApp> {
   String _projectVersion = '';
   String _projectCode = '';
   String _projectAppID = '';
+  String _projectName = '';
 
   @override
   initState() {
@@ -55,6 +56,15 @@ class _MyAppState extends State<MyApp> {
       projectAppID = 'Failed to get app ID.';
     }
 
+     String projectName;
+    // Platform messages may fail, so we use a try/catch PlatformException.
+    try {
+      projectName = await GetVersion.appName;
+    } on PlatformException {
+      projectName = 'Failed to get app name.';
+    }
+
+
     // If the widget was removed from the tree while the asynchronous platform
     // message was in flight, we want to discard the reply rather than calling
     // setState to update our non-existent appearance.
@@ -65,6 +75,7 @@ class _MyAppState extends State<MyApp> {
       _projectVersion = projectVersion;
       _projectCode = projectCode;
       _projectAppID = projectAppID;
+      _projectName = projectName;
     });
   }
 
@@ -80,8 +91,16 @@ class _MyAppState extends State<MyApp> {
         body: new SingleChildScrollView(
           child: new ListBody(
             children: <Widget>[
-              new Container(
+                new Container(
                 height: 10.0,
+              ),
+              new ListTile(
+                leading: new Icon(Icons.info),
+                title: const Text('Name'),
+                subtitle: new Text(_platformVersion),
+              ),
+              new Container(
+                height: 20.0,
               ),
               new ListTile(
                 leading: new Icon(Icons.info),
