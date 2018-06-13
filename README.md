@@ -5,12 +5,10 @@
 Get the Version Name, Version Code and App ID on iOS and Android.
 
 ## Installing
+```
+get_version: "^0.0.3"
+```
 
-```
-get_version:
-    git:
-      url: git://github.com/AppleEducate/get_version
-```
 ## Import
 ```
 import 'package:get_version/get_version.dart';
