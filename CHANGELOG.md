@@ -1,3 +1,7 @@
+## [0.0.5] - Dart Support
+
+* Dart 2.1.0 support
+
 ## [0.0.5] - Bug Fixes
 
 * Updating README.md
