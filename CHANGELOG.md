@@ -1,3 +1,19 @@
+## 0.1.0 - 04.06.2019
+
+* Making Example Desktop Aware
+
+## [0.0.8] - Updating Dependencies
+
+* Updating Kotlin Version
+
+## [0.0.7] - Refactor
+
+* Updating Example
+
+## [0.0.6] - Refactor
+
+* Updating Example
+
 ## [0.0.5] - Dart Support
 
 * Dart 2.1.0 support

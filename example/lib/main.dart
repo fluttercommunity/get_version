@@ -2,7 +2,34 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get_version/get_version.dart';
 
-void main() => runApp(new MyApp());
+import 'dart:io' show Platform;
+import 'package:flutter/foundation.dart';
+
+// The existing imports
+// !! Keep your existing impots here !!
+
+/// main is entry point of Flutter application
+void main() {
+  // Desktop platforms aren't a valid platform.
+  _setTargetPlatformForDesktop();
+
+  return runApp(MyApp());
+}
+
+/// If the current platform is desktop, override the default platform to
+/// a supported platform (iOS for macOS, Android for Linux and Windows).
+/// Otherwise, do nothing.
+void _setTargetPlatformForDesktop() {
+  TargetPlatform targetPlatform;
+  if (Platform.isMacOS) {
+    targetPlatform = TargetPlatform.iOS;
+  } else if (Platform.isLinux || Platform.isWindows) {
+    targetPlatform = TargetPlatform.android;
+  }
+  if (targetPlatform != null) {
+    debugDefaultTargetPlatformOverride = targetPlatform;
+  }
+}
 
 class MyApp extends StatefulWidget {
   @override
@@ -17,13 +44,13 @@ class _MyAppState extends State<MyApp> {
   String _projectName = '';
 
   @override
-  initState() {
+  void initState() {
+    _initPlatformState();
     super.initState();
-    initPlatformState();
   }
 
   // Platform messages are asynchronous, so we initialize in an async method.
-  initPlatformState() async {
+  void _initPlatformState() async {
     String platformVersion;
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
@@ -83,7 +110,7 @@ class _MyAppState extends State<MyApp> {
     return new MaterialApp(
       home: new Scaffold(
         appBar: new AppBar(
-          title: new Text('Plugin example app'),
+          title: const Text('Get Version Example'),
         ),
         body: new SingleChildScrollView(
           child: new ListBody(
@@ -92,39 +119,31 @@ class _MyAppState extends State<MyApp> {
                 height: 10.0,
               ),
               new ListTile(
-                leading: new Icon(Icons.info),
+                leading: const Icon(Icons.info),
                 title: const Text('Name'),
                 subtitle: new Text(_projectName),
               ),
-              new Container(
-                height: 20.0,
-              ),
+              const Divider(height: 20.0),
               new ListTile(
-                leading: new Icon(Icons.info),
+                leading: const Icon(Icons.info),
                 title: const Text('Running on'),
                 subtitle: new Text(_platformVersion),
               ),
-              new Divider(
-                height: 20.0,
-              ),
+              const Divider(height: 20.0),
               new ListTile(
-                leading: new Icon(Icons.info),
+                leading: const Icon(Icons.info),
                 title: const Text('Version Name'),
                 subtitle: new Text(_projectVersion),
               ),
-              new Divider(
-                height: 20.0,
-              ),
+              const Divider(height: 20.0),
               new ListTile(
-                leading: new Icon(Icons.info),
+                leading: const Icon(Icons.info),
                 title: const Text('Version Code'),
                 subtitle: new Text(_projectCode),
               ),
-              new Divider(
-                height: 20.0,
-              ),
+              const Divider(height: 20.0),
               new ListTile(
-                leading: new Icon(Icons.info),
+                leading: const Icon(Icons.info),
                 title: const Text('App ID'),
                 subtitle: new Text(_projectAppID),
               ),
