@@ -1,3 +1,5 @@
+[![Flutter Community: get_version](https://fluttercommunity.dev/_github/header/get_version)](https://github.com/fluttercommunity/community)
+
 [![Buy Me A Coffee](https://img.shields.io/badge/Donate-Buy%20Me%20A%20Coffee-yellow.svg)](https://www.buymeacoffee.com/rodydavis)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WSH3GVC49GNNJ)
 
@@ -12,13 +14,13 @@ Get the Version Name, Version Code and App ID on iOS and Android.
 
 Go to build.gradle and update:
 
-```
- defaultConfig {
-        versionCode 1
-        versionName "1.0"
-        minSdkVersion 16
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-    }
+```gradle
+defaultConfig {
+  versionCode 1
+  versionName "1.0"
+  minSdkVersion 16
+  testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+}
 ```
 
 ### iOS
@@ -29,67 +31,67 @@ Already good to go.
 
 Get OS Version:
 
-```
-    String platformVersion;
-    // Platform messages may fail, so we use a try/catch PlatformException.
-    try {
-      platformVersion = await GetVersion.platformVersion;
-    } on PlatformException {
-      platformVersion = 'Failed to get platform version.';
-    }
+```dart
+String platformVersion;
+// Platform messages may fail, so we use a try/catch PlatformException.
+try {
+  platformVersion = await GetVersion.platformVersion;
+} on PlatformException {
+  platformVersion = 'Failed to get platform version.';
+}
 ```
 
 Get Version Name:
 
-```
-  String projectVersion;
-    // Platform messages may fail, so we use a try/catch PlatformException.
-    try {
-      projectVersion = await GetVersion.projectVersion;
-    } on PlatformException {
-      projectVersion = 'Failed to get project version.';
-    }
+```dart
+String projectVersion;
+// Platform messages may fail, so we use a try/catch PlatformException.
+try {
+  projectVersion = await GetVersion.projectVersion;
+} on PlatformException {
+  projectVersion = 'Failed to get project version.';
+}
 ```
 
 Get Version Code:
 
-```
-   String projectCode;
-    // Platform messages may fail, so we use a try/catch PlatformException.
-    try {
-      projectCode = await GetVersion.projectCode;
-    } on PlatformException {
-      projectCode = 'Failed to get build number.';
-    }
+```dart
+String projectCode;
+// Platform messages may fail, so we use a try/catch PlatformException.
+try {
+  projectCode = await GetVersion.projectCode;
+} on PlatformException {
+  projectCode = 'Failed to get build number.';
+}
 ```
 
 Get App ID:
 
-```
+```dart
 String projectAppID;
-    // Platform messages may fail, so we use a try/catch PlatformException.
-    try {
-      projectAppID = await GetVersion.appID;
-    } on PlatformException {
-      projectAppID = 'Failed to get app ID.';
-    }
+// Platform messages may fail, so we use a try/catch PlatformException.
+try {
+  projectAppID = await GetVersion.appID;
+} on PlatformException {
+  projectAppID = 'Failed to get app ID.';
+}
 ```
 
 Get App Name:
 
-```
+```dart
 String projectName;
-    // Platform messages may fail, so we use a try/catch PlatformException.
-    try {
-      projectName = await GetVersion.appName;
-    } on PlatformException {
-      projectName = 'Failed to get app name.';
-    }
+// Platform messages may fail, so we use a try/catch PlatformException.
+try {
+  projectName = await GetVersion.appName;
+} on PlatformException {
+  projectName = 'Failed to get app name.';
+}
 ```
     
 ## Example
 
-```
+```dart
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get_version/get_version.dart';
