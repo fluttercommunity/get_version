@@ -1,3 +1,7 @@
+## 0.2.0
+
+* AndroidX Support
+
 ## 0.1.0 - 04.06.2019
 
 * Making Example Desktop Aware
