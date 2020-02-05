@@ -4,7 +4,9 @@
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WSH3GVC49GNNJ)
 
 # get_version
-![alt text](https://github.com/AppleEducate/get_version/blob/master/screenshots/IMG_0023.PNG)
+![alt text](https://github.com/fluttercommunity/get_version/blob/master/screenshots/IMG_0023.PNG)
+
+Online Demo: https://fluttercommunity.github.io/get_version/
 
 ## Description
 Get the Version Name, Version Code and App ID on iOS and Android.
