@@ -8,3 +8,5 @@ build/
 ios/.generated/
 packages
 pubspec.lock
+
+example/.flutter-plugins-dependencies

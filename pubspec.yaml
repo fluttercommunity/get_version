@@ -1,16 +1,18 @@
 name: get_version
-description: Get the Version Name, Version Code, Platform and OS Version, and App ID on iOS and Android.
+description: Get the Version Name, Version Code, Platform and OS Version, and
+  App ID on iOS and Android.
 version: 1.0.0
 author: Rody Davis <rody.davis.jr@gmail.com>
 homepage: https://github.com/fluttercommunity/get_version
 maintainer: Rody Davis (@rodydavis)
 
 environment:
-  sdk: '>=2.12.0 <3.0.0'
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
+  build_runner: ^1.11.5
   package_info: ^2.0.0
 
 flutter:
