@@ -7,14 +7,14 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
 
       - name: Setup Flutter
         uses: subosito/flutter-action@v1
         with:
-          channel: 'dev'
+          channel: 'stable'
 
       - name: Install
         run: |
@@ -22,7 +22,14 @@ jobs:
           flutter pub get
       - name: Build
         run: cd example && flutter build web
-
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_RAMAH_GET_VERSION }}"
+          projectId: ramah-get-version
+          channelId: live
+        env:
+          FIREBASE_CLI_PREVIEWS: hostingchannels
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:

@@ -6,8 +6,8 @@ import 'package:package_info/package_info.dart';
 class GetVersion {
   static const MethodChannel _channel = MethodChannel('get_version');
 
-  static Future<String> get platformVersion async {
-    final String version = await _channel.invokeMethod('getPlatformVersion');
+  static Future<String?> get platformVersion async {
+    final String? version = await _channel.invokeMethod('getPlatformVersion');
     return version;
   }
 

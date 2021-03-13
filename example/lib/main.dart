@@ -19,7 +19,7 @@ void main() {
 /// a supported platform (iOS for macOS, Android for Linux and Windows).
 /// Otherwise, do nothing.
 void _setTargetPlatformForDesktop() {
-  TargetPlatform targetPlatform;
+  TargetPlatform? targetPlatform;
   if (Platform.isMacOS) {
     targetPlatform = TargetPlatform.iOS;
   } else if (Platform.isLinux || Platform.isWindows) {
@@ -36,7 +36,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String _platformVersion = 'Unknown';
+  String? _platformVersion = 'Unknown';
   String _projectVersion = '';
   String _projectCode = '';
   String _projectAppID = '';
@@ -50,7 +50,7 @@ class _MyAppState extends State<MyApp> {
 
   // Platform messages are asynchronous, so we initialize in an async method.
   void _initPlatformState() async {
-    String platformVersion;
+    String? platformVersion;
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
       platformVersion = await GetVersion.platformVersion;
@@ -126,7 +126,7 @@ class _MyAppState extends State<MyApp> {
               new ListTile(
                 leading: const Icon(Icons.info),
                 title: const Text('Running on'),
-                subtitle: new Text(_platformVersion),
+                subtitle: new Text(_platformVersion!),
               ),
               const Divider(height: 20.0),
               new ListTile(
