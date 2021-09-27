@@ -1,6 +1,9 @@
 name: get_version_example
 description: Demonstrates how to use the get_version plugin.
 
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+  
 dependencies:
   flutter:
     sdk: flutter

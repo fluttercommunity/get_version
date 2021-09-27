@@ -16,8 +16,8 @@
       <excludeFolder url="file://$MODULE_DIR$/example/android/app/src/main/java/io/flutter/plugins/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/android/app/src/main/java/io/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/android/app/src/main/java/packages" />
-      <excludeFolder url="file://$MODULE_DIR$/example/android/app/src/main/kotlin/com/appleeducate/getversionexample/packages" />
-      <excludeFolder url="file://$MODULE_DIR$/example/android/app/src/main/kotlin/com/appleeducate/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/example/android/app/src/main/kotlin/com/rodydavis/getversionexample/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/example/android/app/src/main/kotlin/com/rodydavis/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/android/app/src/main/kotlin/com/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/android/app/src/main/kotlin/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/android/app/src/main/packages" />
